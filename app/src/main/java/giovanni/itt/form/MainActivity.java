@@ -33,8 +33,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ediDireccion = (EditText) findViewById(R.id.txtVilla);
         ediTelefono = (EditText) findViewById(R.id.txtTelefono);
         btnEnviar.setOnClickListener(this);
-
-        //Fecha
         bfecha = (Button) findViewById(R.id.bfecha);
         ediFecha = (EditText) findViewById(R.id.txtFecha);
 
@@ -71,10 +69,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String auxEdiNombre = ediNombre.getText().toString();
         String auxEdiTelefono = ediTelefono.getText().toString();
         String auxEdiDireccion = ediDireccion.getText().toString();
+        String auxEdiFecha = ediFecha.getText().toString();
 
         explicit_intent.putExtra("nombre", auxEdiNombre);//Guardamos una cadena
         explicit_intent.putExtra("telefono", auxEdiTelefono);//Guardamos un entero
         explicit_intent.putExtra("direccion", auxEdiDireccion);
+        explicit_intent.putExtra("fecha",auxEdiFecha);
         startActivity(explicit_intent);
 
 
