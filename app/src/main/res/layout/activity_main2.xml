@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:id="@+id/activityFormulario"
+    android:background="@android:color/darker_gray"
     tools:context="giovanni.itt.form.Main2Activity">
 
     <TextView

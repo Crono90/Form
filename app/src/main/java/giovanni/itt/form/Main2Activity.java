@@ -48,6 +48,12 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
         }
     }
 
+    public void Onclick (View view) {
+        Intent explicit_intent;
+        explicit_intent = new Intent(this, Main3Activity.class);
+        startActivity(explicit_intent);
+    }
+
 
 
     @Override
