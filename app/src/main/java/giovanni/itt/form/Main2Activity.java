@@ -24,12 +24,13 @@ public class Main2Activity extends AppCompatActivity {
         Bundle extras = intent.getExtras();
         if (extras != null) {//ver si contiene datos
             String datoNombre = (String) extras.get("nombre");//Obtengo el nombre
-            String datoTelefono = (String) extras.get("telefono");//Obtengo la edad
-            String datoDireccion = (String) extras.get("telefono");
+            String datoTelefono = (String) extras.get("telefono");//Obtengo el telefono
+            String datoDireccion = (String) extras.get("direccion");//Obtengo direccion
 
-            txtNombre.setText(datoNombre);
-            txtTelefono.setText(datoTelefono);
-            txtDireccion.setText(datoDireccion);
+
+            txtNombre.setText("Nombre: "+datoNombre);
+            txtTelefono.setText("Telefono :"+datoTelefono);
+            txtDireccion.setText("Direccion :"+datoDireccion);
 
         }
     }
