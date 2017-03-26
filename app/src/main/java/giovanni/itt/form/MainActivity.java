@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         btnEnviar = (Button) findViewById(R.id.ButtonEnviar);
         ediNombre = (EditText) findViewById(R.id.txtNombre);
         ediDireccion = (EditText) findViewById(R.id.txtVilla);
@@ -36,6 +35,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         bfecha = (Button) findViewById(R.id.bfecha);
         ediFecha = (EditText) findViewById(R.id.txtFecha);
 
+        Intent intent = getIntent();
+        Bundle extras = intent.getExtras();
+        if (extras != null) {//ver si contiene datos
+            String datoNombre = (String) extras.get("nombre");
+            String datoTelefono = (String) extras.get("telefono");//Obtengo el telefono
+            String datoDireccion = (String) extras.get("direccion");//Obtengo direccion
+            String datoFecha = (String) extras.get("fecha");//obtengo fecha
+
+            ediNombre.setText(datoNombre);//envia datos de nombre
+            ediTelefono.setText(datoTelefono);//envia datos de telelfono
+            ediDireccion.setText(datoDireccion);
+            ediFecha.setText(datoFecha);
+
+
+
+        }
     }
 
         public void Fecha_Pick (View view) {

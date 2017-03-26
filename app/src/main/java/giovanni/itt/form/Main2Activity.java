@@ -5,10 +5,17 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
-public class Main2Activity extends AppCompatActivity {
+
+public class Main2Activity extends AppCompatActivity implements View.OnClickListener {
     TextView txtNombre, txtTelefono, txtDireccion, txtFecha;
+    private Button beditar;
+    private EditText ediNombre;
+    int request_code = 1;
 
 
     @Override
@@ -20,6 +27,8 @@ public class Main2Activity extends AppCompatActivity {
         txtTelefono = (TextView) findViewById(R.id.textTelfonos);
         txtDireccion = (TextView) findViewById(R.id.textDirecciones);
         txtFecha =(TextView) findViewById(R.id.textNacimiento);
+        beditar = (Button) findViewById(R.id.ButtonEditar);
+        beditar.setOnClickListener(this);
 
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
@@ -37,6 +46,27 @@ public class Main2Activity extends AppCompatActivity {
 
 
         }
+    }
+
+
+
+    @Override
+    public void onClick(View v) {
+        Intent explicit_intent;
+
+        explicit_intent = new Intent(this, MainActivity.class);
+        String auxEdiNombre = txtNombre.getText().toString();
+        String auxEdiTelefono = txtTelefono.getText().toString();
+        String auxEdiDireccion = txtDireccion.getText().toString();
+        String auxEdiFecha = txtFecha.getText().toString();
+
+        explicit_intent.putExtra("nombre", auxEdiNombre);//Guardamos una cadena
+        explicit_intent.putExtra("telefono", auxEdiTelefono);//Guardamos un entero
+        explicit_intent.putExtra("direccion", auxEdiDireccion);
+        explicit_intent.putExtra("fecha",auxEdiFecha);
+        startActivity(explicit_intent);
+
+
     }
 }
 
